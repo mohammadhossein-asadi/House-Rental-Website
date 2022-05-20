@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>house page</title>
+  </head>
+  <body>
+    <nav id="navBar" class="navbar-white">
+        <a href="index.html">
+            <img src="./images/logo-red.png" class="logo" />
+        </a>
+    
+      <ul class="nav-links">
+        <li><a href="#" class="active">Popular Places</a></li>
+        <li><a href="#">Travel Outside</a></li>
+        <li><a href="./listing.html">Online Packages</a></li>
+      </ul>
+      <a href="#" class="register-btn">Register Now</a>
+      <i class="fa-solid fa-bars" onclick="togglebtn()"></i>
+    </nav>
+    <div class="house-details">
+      <div class="house-title">
+        <h1>Wenge House</h1>
+        <div class="row">
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+            <span>245 Reviews</span>
+          </div>
+          <div>
+            <p>Location: San Francisco, California,United States</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery-img-1"><img src="./images/house-1.png" /></div>
+        <div><img src="./images/house-2.png" /></div>
+        <div><img src="./images/house-3.png" /></div>
+        <div><img src="./images/house-4.png" /></div>
+        <div><img src="./images/house-5.png" /></div>
+      </div>
+      <div class="small-deetails">
+        <h2>Enter rental unit hosted by Brandon</h2>
+        <p>2 guest &nbsp; &nbsp; 2beds &nbsp; &nbsp;1 bathroom</p>
+        <h4>$ 100 / day</h4>
+      </div>
+      <hr class="line" />
+      <form class="check-form">
+        <div>
+          <label for="">Check-in</label>
+          <input type="text" placeholder="Add date" />
+        </div>
+        <div>
+          <label for="">Check-out</label>
+          <input type="text" placeholder="Add date" />
+        </div>
+        <div class="guest-fied">
+          <label for="">Guest</label>
+          <input type="text" placeholder="2 guest" />
+        </div>
+        <button type="submit">Check Availabilty</button>
+      </form>
+
+      <ul class="details-list">
+        <li>
+          <i class="fas fa-home"></i>
+          Entire Home
+          <span>You Will have entire flat for you.</span>
+        </li>
+        <li>
+          <i class="fas fa-paint-brush"></i>
+          Enhanced Clean
+          <span>This hosst has committed to staybnb's cleaning process.</span>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          EGreat Location
+          <span>90% of recent guests gave the location a 5 star rating.</span>
+        </li>
+        <li>
+          <i class="fas fa-heart"></i>
+          Great Check-in Experience
+          <span
+            >100% of recent guests gave the check-in process a 5 star
+            rating</span
+          >
+        </li>
+      </ul>
+      <hr class="line" />
+      <p class="home-desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        repellat totam enim ut libero cumque eos, molestiae cupiditate, nemo
+        iste dolorem doloribus quas facere perspiciatis aut error culpa
+        necessitatibus explicabo amet. Voluptatibus soluta totam corrupti vitae
+        officia officiis ducimus consectetur, placeat mollitia sed ab culpa
+        possimus nulla ea inventore nesciunt.
+      </p>
+      <hr class="line" />
+      <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d53747.29471300261!2d51.630945972964085!3d32.65396400434721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3fbc35fe8c326799%3A0x7ab57816ef5837f5!2sEsfahan%2C%20Isfahan%20Province%2C%20Iran!3m2!1d32.653896599999996!2d51.6659656!4m0!5e0!3m2!1sen!2sde!4v1649408324364!5m2!1sen!2sde"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <b>San Francisco, California,United States</b>
+        <p>It's like a home away form home.</p>
+      </div>
+      <hr class="line" />
+      <div class="host">
+        <img src="./images/host.png" alt="" />
+        <div>
+          <h2>HOSTED By Brandon</h2>
+          <p>
+            <span>
+              div>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </span>
+            &nbsp;&nbsp;245 reviewa &nbsp;&nbsp; response rate 100%&nbsp;&nbsp;
+            time:60 min
+          </p>
+        </div>
+      </div>
+
+      <a href="#" class="contact-host">Cantact Host</a>
+    </div>
+    <div class="container">
+          <div class="footer">
+      <a href="https://facebook.com/"><iclass="fa-brandsfa-facebook-f"></i
+      ></a>
+      <a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://instagram.com/"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <hr />
+      <p>Copyright 2021 , Easy Tutorials.</p>
+    </div>
+    </div>
+    <script>
+        var navbar = document.getElementById("navBar");
+
+function togglebtn(){
+    navbar.classList.toggle("hidemenu");
+}
+    </script>
+  </body>
+</html>
