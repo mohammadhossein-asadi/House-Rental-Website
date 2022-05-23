@@ -165,6 +165,9 @@ nav {
   margin-top: 20px;
   display: inline-block;
 }
+.ctn-btn:active{
+  transform: scale(0.95);
+}
 
 /* --------------- Travellers Stories------------ */
 
