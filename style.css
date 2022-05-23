@@ -39,6 +39,9 @@ nav {
   text-decoration: none;
   font-size: 14px;
 }
+.register-btn:active{
+  transform: scale(0.95);
+}
 .container {
   padding: 0 7%;
 }
