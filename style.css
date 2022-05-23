@@ -75,6 +75,9 @@ nav {
   border: 0;
   outline: none;
 }
+.search-bar form button:active{
+  transform: scale(0.8);
+}
 .search-bar form button img {
   width: 15px;
   margin-top: 7px;
