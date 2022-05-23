@@ -74,6 +74,7 @@ nav {
   border-radius: 50%;
   border: 0;
   outline: none;
+  margin-left: 38px;
 }
 .search-bar form button:active{
   transform: scale(0.95);
