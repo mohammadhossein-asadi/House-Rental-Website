@@ -208,6 +208,9 @@ nav {
   border-radius: 30px;
   font-size: 20px;
 }
+.start-btn:active{
+  transform: scale(0.95);
+}
 
 /* ------------about-msg --------------*/
 .about-msg {
