@@ -17,27 +17,21 @@ export function ListingContent({ initialFilters }: ListingContentProps) {
   const [filters, setFilters] = useState<SearchFilters>(initialFilters);
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  useSearchParams();
 
   function updateURL(newFilters: SearchFilters) {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams();
 
-    params.set('query', newFilters.query);
-    params.set('checkIn', newFilters.checkIn);
-    params.set('checkOut', newFilters.checkOut);
-    params.set('guests', String(newFilters.guests));
-    params.set('page', String(newFilters.page));
+    if (newFilters.query) params.set('location', newFilters.query);
+    if (newFilters.guests > 1) params.set('guests', String(newFilters.guests));
+    if (newFilters.page > 1) params.set('page', String(newFilters.page));
 
     if (newFilters.propertyTypes.length > 0) {
-      params.set('propertyTypes', newFilters.propertyTypes.join(','));
-    } else {
-      params.delete('propertyTypes');
+      params.set('propertyType', newFilters.propertyTypes.join(','));
     }
 
     if (newFilters.amenities.length > 0) {
       params.set('amenities', newFilters.amenities.join(','));
-    } else {
-      params.delete('amenities');
     }
 
     router.push(`${pathname}?${params.toString()}`);
@@ -66,7 +60,7 @@ export function ListingContent({ initialFilters }: ListingContentProps) {
         {/* Main content - 70% */}
         <div className="lg:w-[70%]">
           {items.length === 0 ? (
-            <div className="text-center py-16 text-gray-500">
+            <div className="text-center py-16 text-text-muted dark:text-text-dark-muted">
               No properties found matching your filters.
             </div>
           ) : (

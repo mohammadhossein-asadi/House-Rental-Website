@@ -15,14 +15,14 @@ export default function PropertyQuickInfo({
 }: PropertyQuickInfoProps) {
   return (
     <div className="py-4">
-      <h2 className="text-xl font-medium">
+      <h2 className="text-xl font-medium text-text dark:text-text-dark">
         Enter rental unit hosted by {hostName}
       </h2>
-      <p className="text-text-muted mt-1">
+      <p className="text-text-muted dark:text-text-dark-muted mt-1">
         {guests} guests &nbsp;&nbsp; {bedrooms} beds &nbsp;&nbsp; {bathrooms}{' '}
         bathroom
       </p>
-      <h4 className="mt-2 text-lg font-semibold">${pricePerDay} / day</h4>
+      <h4 className="mt-2 text-lg font-semibold text-text dark:text-text-dark">${pricePerDay} / day</h4>
     </div>
   );
 }

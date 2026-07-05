@@ -65,7 +65,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-subtle hover:text-brand transition-colors"
+              className="text-text-subtle dark:text-text-dark-subtle hover:text-brand transition-colors"
               aria-label={social.label}
             >
               {social.icon}
@@ -74,10 +74,10 @@ export default function Footer() {
         </div>
 
         {/* Separator */}
-        <hr className="border-border-light" />
+        <hr className="border-border-light dark:border-border-dark" />
 
         {/* Copyright */}
-        <p className="py-4 text-sm text-text-muted">
+        <p className="py-4 text-sm text-text-muted dark:text-text-dark-muted">
           Copyright 2024, Staybnb.
         </p>
       </div>

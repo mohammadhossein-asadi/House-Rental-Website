@@ -32,11 +32,11 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
   const pages = getPages();
 
   return (
-    <div className="flex items-center justify-center gap-2" style={{ margin: '40px 0' }}>
+    <div className="flex items-center justify-center gap-2 my-10">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-muted dark:hover:bg-surface-dark-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-text dark:text-text-dark"
         aria-label="Previous page"
       >
         <ChevronLeft size={18} />
@@ -44,19 +44,18 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
 
       {pages.map((page, i) =>
         page === 'ellipsis' ? (
-          <span key={`ellipsis-${i}`} className="w-10 h-10 flex items-center justify-center text-gray-400">
+          <span key={`ellipsis-${i}`} className="w-10 h-10 flex items-center justify-center text-text-subtle dark:text-text-dark-subtle">
             ...
           </span>
         ) : (
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className="w-10 h-10 flex items-center justify-center rounded-full transition-colors"
-            style={
+            className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
               currentPage === page
-                ? { backgroundColor: '#333', color: '#fff' }
-                : { color: '#333' }
-            }
+                ? 'bg-text dark:bg-text-dark text-white'
+                : 'text-text dark:text-text-dark hover:bg-surface-muted dark:hover:bg-surface-dark-muted'
+            }`}
           >
             {page}
           </button>
@@ -66,7 +65,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-muted dark:hover:bg-surface-dark-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-text dark:text-text-dark"
         aria-label="Next page"
       >
         <ChevronRight size={18} />

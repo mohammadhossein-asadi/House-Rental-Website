@@ -5,8 +5,8 @@ interface MapSectionProps {
 
 export default function MapSection({ embedUrl, address }: MapSectionProps) {
   return (
-    <div>
-      <h3 className="text-[26px] font-medium">Location on map</h3>
+    <div className="my-12">
+      <h3 className="text-[26px] font-medium text-text dark:text-text-dark">Location on map</h3>
       <iframe
         src={embedUrl}
         width="100%"
@@ -15,10 +15,10 @@ export default function MapSection({ embedUrl, address }: MapSectionProps) {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="mt-4"
+        className="mt-4 rounded-xl"
       />
-      <b className="mt-2 block">{address}</b>
-      <p className="text-text-muted mt-1">It&apos;s like a home away from home.</p>
+      <b className="mt-4 block text-text dark:text-text-dark">{address}</b>
+      <p className="text-text-muted dark:text-text-dark-muted mt-1">It&apos;s like a home away from home.</p>
     </div>
   );
 }

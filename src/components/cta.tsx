@@ -25,7 +25,7 @@ export function CTA() {
             Great opportunity to make money by sharing extra space.
           </p>
           <Link
-            href="/host"
+            href="/listing"
             className="inline-block bg-[#ff5361] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#e64957] transition-colors"
           >
             Know More

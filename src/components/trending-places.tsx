@@ -5,7 +5,7 @@ import { trending } from '@/data/trending';
 export function TrendingPlaces() {
   return (
     <section className="py-12 px-4">
-      <h2 className="text-2xl font-bold text-text mb-8 text-center">
+      <h2 className="text-2xl font-bold text-text dark:text-text-dark mb-8 text-center">
         Trending Places
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -23,7 +23,7 @@ export function TrendingPlaces() {
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <p className="mt-2 font-semibold text-text text-center">{place.city}</p>
+            <p className="mt-2 font-semibold text-text dark:text-text-dark text-center">{place.city}</p>
           </Link>
         ))}
       </div>

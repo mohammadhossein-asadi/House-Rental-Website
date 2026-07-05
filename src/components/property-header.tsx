@@ -15,10 +15,10 @@ export default function PropertyHeader({
 }: PropertyHeaderProps) {
   return (
     <div className="mt-[50px]">
-      <h1 className="text-3xl font-semibold">{title}</h1>
+      <h1 className="text-3xl font-semibold text-text dark:text-text-dark">{title}</h1>
       <div className="mt-2 flex flex-wrap items-center gap-4">
         <StarRating rating={rating} reviewCount={reviewCount} />
-        <p className="text-text-muted text-sm">{location}</p>
+        <p className="text-text-muted dark:text-text-dark-muted text-sm">{location}</p>
       </div>
     </div>
   );

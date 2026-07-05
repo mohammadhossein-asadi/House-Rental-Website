@@ -13,10 +13,7 @@ export default function PropertyDescription({
   description,
 }: PropertyDescriptionProps) {
   return (
-    <p
-      className="text-text-muted leading-relaxed"
-      style={{ maxWidth: 700, marginBottom: 50 }}
-    >
+    <p className="text-text-muted dark:text-text-dark-muted leading-relaxed max-w-[700px] mb-12">
       {description || fallbackDescription}
     </p>
   );

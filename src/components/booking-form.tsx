@@ -42,20 +42,17 @@ export default function BookingForm({ property }: BookingFormProps) {
   };
 
   return (
-    <div
-      className="rounded-lg p-2.5 md:p-[10px_50px]"
-      style={{ boxShadow: '0 0 30px rgba(0,0,0,0.3)', borderRadius: '8px' }}
-    >
+    <div className="rounded-lg p-2.5 md:p-[10px_50px] bg-white dark:bg-surface-dark shadow-card dark:shadow-dark-card">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 md:flex-row md:items-end"
       >
         <div className="flex-1">
-          <label className="mb-1 block text-sm font-medium">Check-in</label>
+          <label className="mb-1 block text-sm font-medium text-text dark:text-text-dark">Check-in</label>
           <input
             type="date"
             {...register('checkIn')}
-            className="w-full rounded-lg border border-border p-2"
+            className="w-full rounded-lg border border-border dark:border-border-dark bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark p-2"
           />
           {errors.checkIn && (
             <p className="mt-1 text-xs text-red-500">
@@ -65,11 +62,11 @@ export default function BookingForm({ property }: BookingFormProps) {
         </div>
 
         <div className="flex-1">
-          <label className="mb-1 block text-sm font-medium">Check-out</label>
+          <label className="mb-1 block text-sm font-medium text-text dark:text-text-dark">Check-out</label>
           <input
             type="date"
             {...register('checkOut')}
-            className="w-full rounded-lg border border-border p-2"
+            className="w-full rounded-lg border border-border dark:border-border-dark bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark p-2"
           />
           {errors.checkOut && (
             <p className="mt-1 text-xs text-red-500">
@@ -79,13 +76,13 @@ export default function BookingForm({ property }: BookingFormProps) {
         </div>
 
         <div className="flex-1">
-          <label className="mb-1 block text-sm font-medium">Guest</label>
+          <label className="mb-1 block text-sm font-medium text-text dark:text-text-dark">Guest</label>
           <input
             type="number"
             min={1}
             max={20}
             {...register('guests')}
-            className="w-full rounded-lg border border-border p-2"
+            className="w-full rounded-lg border border-border dark:border-border-dark bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark p-2"
           />
           {errors.guests && (
             <p className="mt-1 text-xs text-red-500">

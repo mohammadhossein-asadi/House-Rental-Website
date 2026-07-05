@@ -33,10 +33,10 @@ export default function PropertyDetailsList() {
         <li key={feature.title} className="relative ml-[50px]">
           <feature.icon
             size={20}
-            className="absolute left-[-50px] top-0 text-text"
+            className="absolute left-[-50px] top-0 text-text dark:text-text-dark"
           />
-          <span className="font-semibold">{feature.title}</span>
-          <p className="text-text-muted mt-1 text-sm">
+          <span className="font-semibold text-text dark:text-text-dark">{feature.title}</span>
+          <p className="text-text-muted dark:text-text-dark-muted mt-1 text-sm">
             {feature.description}
           </p>
         </li>

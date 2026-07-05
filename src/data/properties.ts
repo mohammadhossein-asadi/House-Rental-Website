@@ -1,8 +1,5 @@
 import { Property } from '../types';
 
-const MAP_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d53747.29471300261!2d51.630945972964085!3d32.65396400434721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3fbc35fe8c326799%3A0x7ab57816ef5837f5!2sEsfahan%2C%20Isfahan%20Province%2C%20Iran!3m2!1d32.653896599999996!2d51.6659656!4m0!5e0!3m2!1sen!2sde!4v1649408324364!5m2!1sen!2sde';
-
 const DEFAULT_HOST = {
   name: 'Brandon',
   avatarUrl: '/images/host.png',
@@ -12,15 +9,25 @@ const DEFAULT_HOST = {
   responseTimeMinutes: 60,
 };
 
+// Unique Google Maps embed URLs for each San Francisco neighborhood
+const MAP_URLS = {
+  fishermansWharf: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.4194!3d37.8083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085874415571069%3A0x71b415d535759e67!2sFisherman%27s%20Wharf%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000',
+  downtown: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.4098!3d37.7879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808807944851%3A0xb347e4b8d780c4b4!2sUnion%20Square%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000001',
+  nobHill: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.4115!3d37.7930!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085876c6e08a6a7%3A0x1be2b40bbb60d6d6!2sNob%20Hill%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000002',
+  goldenGatePark: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.4530!3d37.7694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085875098f3a907%3A0x5a6ed4d00f3b23c8!2sGolden%20Gate%20Park%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000003',
+  soMa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.4008!3d37.7785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858744e390c2b7%3A0x5a6ed4d00f3b23c8!2sSoMa%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000004',
+  oceanBeach: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.0!2d-122.5076!3d37.7594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858775a79e4e27%3A0x9a3a1b3b3b3b3b3b!2sOcean%20Beach%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000005',
+};
+
 export const properties: Property[] = [
   {
     id: '1',
     slug: 'deluxe-queen-room-street-view',
     title: 'Deluxe Queen Room With Street View',
     subtitle: 'Private Villa in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'Fisherman\'s Wharf, San Francisco, California',
     description:
-      'A beautifully furnished deluxe queen room with stunning street views. Perfect for couples or solo travelers looking for a comfortable stay in the heart of San Francisco. The room features modern decor, high ceilings, and large windows that flood the space with natural light.',
+      'A beautifully furnished deluxe queen room with stunning street views of Fisherman\'s Wharf. Perfect for couples or solo travelers looking for a comfortable stay in the heart of San Francisco. The room features modern decor, high ceilings, and large windows that flood the space with natural light.',
     pricePerDay: 100,
     guests: 2,
     bedrooms: 1,
@@ -38,16 +45,16 @@ export const properties: Property[] = [
     propertyType: 'villa',
     amenities: ['wifi', 'kitchen', 'air-conditioning', 'tv'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.fishermansWharf,
   },
   {
     id: '2',
     slug: 'cozy-studio-near-downtown',
     title: 'Cozy Studio Near Downtown',
     subtitle: 'Apartment in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'Union Square, San Francisco, California',
     description:
-      'A charming studio apartment nestled just minutes from downtown San Francisco. Ideal for business travelers or tourists who want easy access to the citys best restaurants, shops, and attractions. Fully equipped kitchen and comfortable sleeping arrangements.',
+      'A charming studio apartment nestled just minutes from downtown San Francisco\'s Union Square. Ideal for business travelers or tourists who want easy access to the city\'s best restaurants, shops, and attractions. Fully equipped kitchen and comfortable sleeping arrangements.',
     pricePerDay: 85,
     guests: 2,
     bedrooms: 1,
@@ -65,16 +72,16 @@ export const properties: Property[] = [
     propertyType: 'flat',
     amenities: ['wifi', 'kitchen', 'washer', 'tv'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.downtown,
   },
   {
     id: '3',
     slug: 'luxury-penthouse-suite',
     title: 'Luxury Penthouse Suite',
     subtitle: 'Condo in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'Nob Hill, San Francisco, California',
     description:
-      'Experience luxury living in this stunning penthouse suite with panoramic city views. Features a spacious open floor plan, gourmet kitchen, private balcony, and premium finishes throughout. Perfect for those seeking an upscale San Francisco experience.',
+      'Experience luxury living in this stunning Nob Hill penthouse suite with panoramic city views. Features a spacious open floor plan, gourmet kitchen, private balcony, and premium finishes throughout. Perfect for those seeking an upscale San Francisco experience.',
     pricePerDay: 200,
     guests: 4,
     bedrooms: 2,
@@ -92,16 +99,16 @@ export const properties: Property[] = [
     propertyType: 'flat',
     amenities: ['wifi', 'gym', 'pool', 'air-conditioning', 'parking', 'tv'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.nobHill,
   },
   {
     id: '4',
     slug: 'charming-garden-cottage',
     title: 'Charming Garden Cottage',
     subtitle: 'House in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'Golden Gate Park, San Francisco, California',
     description:
-      'A delightful garden cottage surrounded by lush greenery and blooming flowers. This quaint retreat offers a peaceful escape from the city while still being conveniently located near public transit. Features a private garden, full kitchen, and cozy fireplace.',
+      'A delightful garden cottage surrounded by lush greenery near Golden Gate Park. This quaint retreat offers a peaceful escape from the city while still being conveniently located near public transit. Features a private garden, full kitchen, and cozy fireplace.',
     pricePerDay: 120,
     guests: 3,
     bedrooms: 1,
@@ -119,16 +126,16 @@ export const properties: Property[] = [
     propertyType: 'house',
     amenities: ['wifi', 'kitchen', 'parking', 'washer'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.goldenGatePark,
   },
   {
     id: '5',
     slug: 'modern-loft-apartment',
     title: 'Modern Loft Apartment',
     subtitle: 'Apartment in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'SoMa District, San Francisco, California',
     description:
-      'A sleek and contemporary loft apartment with industrial-chic design. Soaring ceilings, exposed brick walls, and floor-to-ceiling windows create a dramatic living space. Located in the trendy SoMa district, walking distance to tech hubs and nightlife.',
+      'A sleek and contemporary loft apartment in the trendy SoMa district with industrial-chic design. Soaring ceilings, exposed brick walls, and floor-to-ceiling windows create a dramatic living space. Walking distance to tech hubs and nightlife.',
     pricePerDay: 150,
     guests: 2,
     bedrooms: 1,
@@ -146,16 +153,16 @@ export const properties: Property[] = [
     propertyType: 'flat',
     amenities: ['wifi', 'gym', 'air-conditioning', 'tv', 'parking'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.soMa,
   },
   {
     id: '6',
     slug: 'ocean-view-retreat',
     title: 'Ocean View Retreat',
     subtitle: 'Guest Suite in San Francisco',
-    location: 'San Francisco, California, United States',
+    location: 'Ocean Beach, San Francisco, California',
     description:
-      'Wake up to breathtaking ocean views in this serene guest suite. Located near Ocean Beach, this retreat offers the perfect blend of coastal tranquility and city convenience. Enjoy morning walks on the beach, afternoon surfing, and stunning sunset views from your private terrace.',
+      'Wake up to breathtaking ocean views in this serene guest suite near Ocean Beach. Enjoy morning walks on the beach, afternoon surfing, and stunning sunset views from your private terrace. The perfect blend of coastal tranquility and city convenience.',
     pricePerDay: 175,
     guests: 2,
     bedrooms: 1,
@@ -173,6 +180,6 @@ export const properties: Property[] = [
     propertyType: 'guest-suite',
     amenities: ['wifi', 'kitchen', 'pool', 'air-conditioning', 'washer', 'tv'],
     host: DEFAULT_HOST,
-    mapEmbedUrl: MAP_EMBED_URL,
+    mapEmbedUrl: MAP_URLS.oceanBeach,
   },
 ];

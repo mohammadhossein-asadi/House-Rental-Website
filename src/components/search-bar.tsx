@@ -38,15 +38,15 @@ export function SearchBar() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-[70%] bg-white rounded-pill p-4 flex flex-col md:flex-row items-center gap-4 shadow-lg"
+      className="w-full max-w-[70%] bg-white dark:bg-surface-dark rounded-pill p-4 flex flex-col md:flex-row items-center gap-4 shadow-lg dark:shadow-dark-card"
     >
       <div className="flex-1 w-full">
-        <label className="block text-sm font-bold text-text mb-1">Location</label>
+        <label className="block text-sm font-bold text-text dark:text-text-dark mb-1">Location</label>
         <input
           type="text"
           placeholder="Where are you going?"
           {...register('location')}
-          className="w-full px-4 py-2 border border-border-light rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
+          className="w-full px-4 py-2 border border-border-light dark:border-border-dark rounded-lg bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-brand"
         />
         {errors.location && (
           <p className="text-red-500 text-xs mt-1">{errors.location.message}</p>
@@ -54,11 +54,11 @@ export function SearchBar() {
       </div>
 
       <div className="flex-1 w-full">
-        <label className="block text-sm font-bold text-text mb-1">Check-in</label>
+        <label className="block text-sm font-bold text-text dark:text-text-dark mb-1">Check-in</label>
         <input
           type="date"
           {...register('checkIn')}
-          className="w-full px-4 py-2 border border-border-light rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
+          className="w-full px-4 py-2 border border-border-light dark:border-border-dark rounded-lg bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-brand"
         />
         {errors.checkIn && (
           <p className="text-red-500 text-xs mt-1">{errors.checkIn.message}</p>
@@ -66,11 +66,11 @@ export function SearchBar() {
       </div>
 
       <div className="flex-1 w-full">
-        <label className="block text-sm font-bold text-text mb-1">Check-out</label>
+        <label className="block text-sm font-bold text-text dark:text-text-dark mb-1">Check-out</label>
         <input
           type="date"
           {...register('checkOut')}
-          className="w-full px-4 py-2 border border-border-light rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
+          className="w-full px-4 py-2 border border-border-light dark:border-border-dark rounded-lg bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-brand"
         />
         {errors.checkOut && (
           <p className="text-red-500 text-xs mt-1">{errors.checkOut.message}</p>
@@ -78,13 +78,13 @@ export function SearchBar() {
       </div>
 
       <div className="flex-1 w-full">
-        <label className="block text-sm font-bold text-text mb-1">Guests</label>
+        <label className="block text-sm font-bold text-text dark:text-text-dark mb-1">Guests</label>
         <input
           type="number"
           placeholder="Add Guest"
           min={1}
           {...register('guests', { valueAsNumber: true })}
-          className="w-full px-4 py-2 border border-border-light rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
+          className="w-full px-4 py-2 border border-border-light dark:border-border-dark rounded-lg bg-white dark:bg-surface-dark-muted text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-brand"
         />
         {errors.guests && (
           <p className="text-red-500 text-xs mt-1">{errors.guests.message}</p>
@@ -93,7 +93,7 @@ export function SearchBar() {
 
       <button
         type="submit"
-        className="w-12 h-12 bg-[#ff5361] rounded-full flex items-center justify-center text-white hover:bg-[#e64957] transition-colors mt-auto"
+        className="w-12 h-12 bg-brand rounded-full flex items-center justify-center text-white hover:bg-brand-hover transition-colors mt-auto"
       >
         <Search size={20} />
       </button>

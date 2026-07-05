@@ -41,11 +41,11 @@ function Checkbox({
     <label className="flex items-center justify-between cursor-pointer py-1.5 group">
       <div className="flex items-center gap-2.5">
         <div
-          className="w-5 h-5 rounded border-2 flex items-center justify-center transition-colors"
-          style={{
-            borderColor: checked ? '#333' : '#999',
-            backgroundColor: checked ? '#333' : 'transparent',
-          }}
+          className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
+            checked
+              ? 'bg-text dark:bg-text-dark border-text dark:border-text-dark'
+              : 'border-text-subtle dark:border-text-dark-subtle'
+          }`}
           onClick={(e) => {
             e.preventDefault();
             onChange(!checked);
@@ -63,9 +63,9 @@ function Checkbox({
             </svg>
           )}
         </div>
-        <span className="text-sm text-gray-700 group-hover:text-gray-900">{label}</span>
+        <span className="text-sm text-text dark:text-text-dark group-hover:text-text dark:group-hover:text-white">{label}</span>
       </div>
-      <span className="text-sm text-gray-400">({count})</span>
+      <span className="text-sm text-text-subtle dark:text-text-dark-subtle">({count})</span>
     </label>
   );
 }
@@ -97,10 +97,10 @@ function FilterContent({ filters, onFiltersChange, properties }: FilterSidebarPr
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-6">Select Filters</h2>
+      <h2 className="text-lg font-semibold text-text dark:text-text-dark mb-6">Select Filters</h2>
 
       <div className="mb-6">
-        <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">Property Type</h3>
+        <h3 className="text-sm font-semibold text-text-muted dark:text-text-dark-muted mb-3 uppercase tracking-wide">Property Type</h3>
         {typeCounts.map((t) => (
           <Checkbox
             key={t.value}
@@ -113,7 +113,7 @@ function FilterContent({ filters, onFiltersChange, properties }: FilterSidebarPr
       </div>
 
       <div className="mb-6">
-        <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">Amenities</h3>
+        <h3 className="text-sm font-semibold text-text-muted dark:text-text-dark-muted mb-3 uppercase tracking-wide">Amenities</h3>
         {amenityCounts.map((a) => (
           <Checkbox
             key={a.value}
@@ -125,7 +125,7 @@ function FilterContent({ filters, onFiltersChange, properties }: FilterSidebarPr
         ))}
       </div>
 
-      <button className="text-sm text-gray-500 hover:text-gray-800 underline underline-offset-4">
+      <button className="text-sm text-text-subtle dark:text-text-dark-subtle hover:text-text dark:hover:text-text-dark underline underline-offset-4">
         View More
       </button>
     </div>
@@ -140,17 +140,14 @@ export function FilterSidebar(props: FilterSidebarProps) {
       {/* Mobile filter toggle button */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 mb-4"
+        className="lg:hidden flex items-center gap-2 px-4 py-2 border border-border dark:border-border-dark rounded-lg text-sm font-medium text-text dark:text-text-dark hover:bg-surface-muted dark:hover:bg-surface-dark-muted mb-4"
       >
         <SlidersHorizontal size={16} />
         Filters
       </button>
 
       {/* Desktop sidebar */}
-      <aside
-        className="hidden lg:block"
-        style={{ border: '1px solid #999', padding: '20px 30px', marginTop: 30 }}
-      >
+      <aside className="hidden lg:block border border-text-subtle dark:border-border-dark p-5 mt-8">
         <FilterContent {...props} />
       </aside>
 
@@ -158,12 +155,12 @@ export function FilterSidebar(props: FilterSidebarProps) {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-          <div className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-xl overflow-y-auto p-6">
+          <div className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-surface-dark shadow-xl overflow-y-auto p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold">Filters</h2>
+              <h2 className="text-lg font-semibold text-text dark:text-text-dark">Filters</h2>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-1 rounded hover:bg-gray-100"
+                className="p-1 rounded hover:bg-surface-muted dark:hover:bg-surface-dark-muted text-text dark:text-text-dark"
                 aria-label="Close filters"
               >
                 <X size={20} />

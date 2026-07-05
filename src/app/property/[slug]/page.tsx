@@ -54,14 +54,14 @@ export default function PropertyPage({ params }: PropertyPageProps) {
           bathrooms={property.bathrooms}
           pricePerDay={property.pricePerDay}
         />
-        <hr className="border-border max-w-[800px] my-5" />
+        <hr className="border-border dark:border-border-dark max-w-[800px] my-5" />
         <BookingForm property={property} />
         <PropertyDetailsList />
-        <hr className="border-border max-w-[800px] my-5" />
+        <hr className="border-border dark:border-border-dark max-w-[800px] my-5" />
         <PropertyDescription description={property.description} />
-        <hr className="border-border max-w-[800px] my-5" />
+        <hr className="border-border dark:border-border-dark max-w-[800px] my-5" />
         <MapSection embedUrl={property.mapEmbedUrl} address={property.location} />
-        <hr className="border-border max-w-[800px] my-5" />
+        <hr className="border-border dark:border-border-dark max-w-[800px] my-5" />
         <HostInfo host={property.host} />
       </div>
       <div className="container mx-auto px-[7%]">
