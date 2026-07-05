@@ -1,40 +1,84 @@
-# House Rental
+# Staybnb - House Rental Website
 
-Welcome to the House Rental project repository! Here, you'll find the source code and assets for a dynamic house rental website.
+A modern house rental platform built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## About the Project
 
-The House Rental project offers a dynamic and user-friendly platform for discovering rental properties. Utilizing JavaScript, HTML, and CSS, along with the Grid layout for organized and appealing presentation, this website provides a seamless user experience for users seeking their ideal rental homes. Whether you're looking for an apartment, house, or any other type of rental property, this platform aims to simplify the search process.
+Staybnb is a dynamic and user-friendly platform for discovering rental properties. Built with modern web technologies, it provides a seamless user experience for browsing and searching rental homes.
 
-## Project Features
+## Tech Stack
 
-- **User-friendly Interface:** The house rental website offers an intuitive and user-friendly interface, making it effortless for users to browse and discover rental listings.
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 3.4+
+- **UI Components:** shadcn/ui (Radix UI + Tailwind)
+- **Icons:** lucide-react
+- **Forms:** React Hook Form + Zod validation
 
-- **Dynamic Content:** Through the use of JavaScript, the website features dynamic content that enhances user engagement and interaction.
+## Features
 
-- **Grid Layout:** The website is built using the Grid layout, allowing for an organized and visually appealing presentation of rental properties.
+- **Homepage:** Hero section with search, exclusive destinations, trending places, CTA, traveller stories
+- **Property Listings:** Filterable grid with property type and amenity filters, pagination
+- **Property Details:** Image gallery, booking form, host info, Google Maps embed
+- **Responsive Design:** Mobile-first approach with hamburger navigation
+- **Type Safety:** Full TypeScript coverage
+- **SEO Optimized:** Static generation with metadata
 
-- **Property Listings:** The platform facilitates rental property listings, providing detailed information about each property, such as location, amenities, rental price, and more.
+## Getting Started
 
-## Technologies Used
+```bash
+# Install dependencies
+npm install
 
-- **JavaScript:** JavaScript is used to create dynamic and interactive features, enhancing the user experience and making the website engaging.
+# Run development server
+npm run dev
 
-- **HTML:** HTML forms the structure of the website, providing a solid foundation for content presentation.
+# Build for production
+npm run build
 
-- **CSS:** CSS is used for styling and design, ensuring a visually appealing and user-friendly interface.
+# Start production server
+npm start
+```
 
-- **Grid Layout:** The Grid layout is employed for organized and flexible content presentation, creating a visually pleasing layout.
+## Project Structure
 
-## Project Details
+```
+src/
+├── app/
+│   ├── page.tsx              # Homepage
+│   ├── listing/page.tsx      # Property listings
+│   └── property/[slug]/page.tsx  # Property details
+├── components/
+│   ├── navbar.tsx            # Navigation bar
+│   ├── footer.tsx            # Footer
+│   ├── hero.tsx              # Hero section
+│   ├── search-bar.tsx        # Search form
+│   ├── property-card.tsx     # Property card
+│   ├── filter-sidebar.tsx    # Filter sidebar
+│   ├── booking-form.tsx      # Booking form
+│   └── ...                   # More components
+├── data/
+│   ├── properties.ts         # Property data
+│   ├── exclusives.ts         # Exclusive destinations
+│   ├── trending.ts           # Trending places
+│   └── stories.ts            # Traveller stories
+├── lib/
+│   ├── queries.ts            # Data filtering/pagination
+│   └── utils.ts              # Utility functions
+└── types/
+    └── index.ts              # TypeScript interfaces
+```
 
-The House Rental project is designed to serve as a convenient and effective platform for users looking to find their perfect rental homes. With a focus on user experience, dynamic content, and a well-organized presentation, the website streamlines the process of discovering rental properties. It offers a seamless way for users to browse listings and find rental homes that match their preferences.
+## Pages
 
-Explore the House Rental website: [House Rental](https://houserental.mohammadhs.com)
+- `/` - Homepage with hero, search, exclusives, trending, CTA, stories
+- `/listing` - Property listings with filters and pagination
+- `/property/[slug]` - Property details with gallery, booking form, host info
 
-Feel free to reach out if you have any inquiries, suggestions, or feedback. I'm dedicated to ensuring an efficient and enjoyable experience for users seeking their ideal rental properties.
+## Deployment
 
-Thank you for exploring my repository and learning about the capabilities of the House Rental project!
+Deployed on Vercel: [Staybnb](https://houserental.mohammadhs.com)
 
-Best regards,
+## Author
+
 **Mohammadhossein**
