@@ -1,84 +1,136 @@
-# Staybnb - House Rental Website
+<div align="center">
 
-A modern house rental platform built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
+# House Rental Website
 
-## About the Project
+### Modern Property Rental Platform — Next.js + React Hook Form + Zod
 
-Staybnb is a dynamic and user-friendly platform for discovering rental properties. Built with modern web technologies, it provides a seamless user experience for browsing and searching rental homes.
+A full-featured property rental listing platform built with Next.js 14, featuring advanced search and filtering, form validation, date picking, and a polished responsive UI with dark/light theme support.
 
-## Tech Stack
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Coming_Soon-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=3b82f6)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=22c55e)](#)
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 3.4+
-- **UI Components:** shadcn/ui (Radix UI + Tailwind)
-- **Icons:** lucide-react
-- **Forms:** React Hook Form + Zod validation
+</div>
+
+---
+
+## Overview
+
+House Rental Website is a property listing platform that enables users to browse, search, and filter rental properties. Built with Next.js App Router, it features a robust form system powered by React Hook Form and Zod, date-range selection for booking, and a clean shadcn/ui-based component architecture.
+
+---
 
 ## Features
 
-- **Homepage:** Hero section with search, exclusive destinations, trending places, CTA, traveller stories
-- **Property Listings:** Filterable grid with property type and amenity filters, pagination
-- **Property Details:** Image gallery, booking form, host info, Google Maps embed
-- **Responsive Design:** Mobile-first approach with hamburger navigation
-- **Type Safety:** Full TypeScript coverage
-- **SEO Optimized:** Static generation with metadata
+| Feature | Description |
+|:--------|:------------|
+| **Property Listings** | Browse rental properties with detailed views |
+| **Advanced Filtering** | Filter by price, location, property type, and amenities |
+| **Search** | Full-text search across property listings |
+| **Property Detail Pages** | Individual property pages with images and details |
+| **Form Validation** | React Hook Form + Zod schema validation |
+| **Date Picker** | Booking date range selection with react-day-picker |
+| **Dark/Light Theme** | System-aware theme switching |
+| **Responsive Design** | Mobile-first layout with shadcn/ui components |
+| **Error Handling** | Custom error and not-found pages |
+| **Loading States** | Skeleton loading for async content |
 
-## Getting Started
+---
 
-```bash
-# Install dependencies
-npm install
+## Tech Stack
 
-# Run development server
-npm run dev
+| Layer | Technologies |
+|:------|:-------------|
+| **Framework** | Next.js 14 (App Router) |
+| **Language** | TypeScript 5 |
+| **React** | React 18 |
+| **Styling** | Tailwind CSS 3.4 |
+| **UI** | shadcn/ui (Radix UI primitives) |
+| **Forms** | React Hook Form 7.8, Zod 4.4 |
+| **Date** | react-day-picker, date-fns 4 |
+| **Theme** | next-themes 0.4 |
+| **Icons** | Lucide React |
 
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
+---
 
 ## Project Structure
 
 ```
-src/
-├── app/
-│   ├── page.tsx              # Homepage
-│   ├── listing/page.tsx      # Property listings
-│   └── property/[slug]/page.tsx  # Property details
-├── components/
-│   ├── navbar.tsx            # Navigation bar
-│   ├── footer.tsx            # Footer
-│   ├── hero.tsx              # Hero section
-│   ├── search-bar.tsx        # Search form
-│   ├── property-card.tsx     # Property card
-│   ├── filter-sidebar.tsx    # Filter sidebar
-│   ├── booking-form.tsx      # Booking form
-│   └── ...                   # More components
-├── data/
-│   ├── properties.ts         # Property data
-│   ├── exclusives.ts         # Exclusive destinations
-│   ├── trending.ts           # Trending places
-│   └── stories.ts            # Traveller stories
-├── lib/
-│   ├── queries.ts            # Data filtering/pagination
-│   └── utils.ts              # Utility functions
-└── types/
-    └── index.ts              # TypeScript interfaces
+House-Rental-Website/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx             # Home/landing page
+│   │   ├── listing/             # Property listings
+│   │   ├── property/            # Individual property pages
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── loading.tsx          # Loading state
+│   │   ├── error.tsx            # Error boundary
+│   │   ├── not-found.tsx        # 404 page
+│   │   └── globals.css          # Global styles
+│   ├── components/              # UI components
+│   ├── data/                    # Mock property data
+│   ├── hooks/                   # Custom React hooks
+│   ├── lib/                     # Utilities
+│   └── types/                   # TypeScript types
+├── components.json              # shadcn/ui config
+├── tailwind.config.ts
+├── postcss.config.mjs
+├── tsconfig.json
+└── package.json
 ```
 
-## Pages
+---
 
-- `/` - Homepage with hero, search, exclusives, trending, CTA, stories
-- `/listing` - Property listings with filters and pagination
-- `/property/[slug]` - Property details with gallery, booking form, host info
+## Quick Start
 
-## Deployment
+### Prerequisites
 
-Deployed on Vercel: [Staybnb](https://houserental.mohammadhs.com)
+- **Node.js** >= 18.0.0
+
+### Installation
+
+```bash
+git clone https://github.com/mohammadhossein-asadi/House-Rental-Website.git
+cd House-Rental-Website
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Opens at `http://localhost:3000`.
+
+### Production Build
+
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## Scripts
+
+| Command | Description |
+|:--------|:------------|
+| `npm run dev` | Start Next.js dev server |
+| `npm run build` | Production build |
+| `npm run start` | Run production server |
+| `npm run lint` | ESLint |
+
+---
 
 ## Author
 
-**Mohammadhossein**
+**Mohammadhossein Asadi** — Frontend & Full-Stack Engineer
+
+[![GitHub](https://img.shields.io/badge/GitHub-mohammadhossein--asadi-0a0a0a?style=flat-square&logo=github)](https://github.com/mohammadhossein-asadi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mohammadhossein--asadi-0a66c2?style=flat-square&logo=linkedin)](https://linkedin.com/in/mohammadhossein-asadi)
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
