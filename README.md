@@ -1,13 +1,16 @@
 <div align="center">
 
-# TelmaFood
+# House Rental Website
 
-### Recipe Discovery Platform — Search, Filter, Save & Cook
+### Recipe Discovery Platform with Ad Monetization
 
-A modern recipe discovery app built with Next.js 16, featuring advanced multi-criteria filtering, infinite pagination, saved recipes, and a polished mobile-first UI — powered by the Edamam Recipe API.
+A variant of the TelmaFood recipe discovery app with integrated ad monetization — featuring sponsored listings, contextual banners, premium promotions, and impression tracking. Built with Next.js 16, React 19, and Tailwind CSS 4.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Coming_Soon-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=3b82f6)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=22c55e)](#)
+[![Next.js 16](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -15,7 +18,9 @@ A modern recipe discovery app built with Next.js 16, featuring advanced multi-cr
 
 ## Overview
 
-TelmaFood is a recipe discovery platform that connects to the Edamam Recipe Search API to provide access to thousands of recipes. Users can search by keyword, filter by meal type, diet, health labels, cuisine, dish type, cooking time, ingredient count, and calorie range — then save their favorites for later.
+House Rental Website is a recipe discovery platform (originally based on TelmaFood) extended with a comprehensive ad monetization system. It connects to the Edamam Recipe Search API and adds sponsored content slots, impression tracking, and premium promotional blocks — demonstrating how to integrate advertising into a content-focused application without compromising UX.
+
+> **Note:** Despite the repository name, this project is a recipe discovery platform with ad integration. The name reflects an earlier iteration; the current codebase focuses on food/recipe content.
 
 ---
 
@@ -35,6 +40,9 @@ TelmaFood is a recipe discovery platform that connects to the Edamam Recipe Sear
 | **Rate Limiting** | Client-side rate limiter (3 req/s, retry on 429) |
 | **URL-as-State** | Filter state synced with URL params for shareable links |
 | **Skeleton Loading** | Card and detail page loading skeletons |
+| **Ad Monetization** | Sponsored cards, contextual banners, hero promos, premium blocks |
+| **Impression Tracking** | Custom hook for ad viewability measurement |
+| **Sponsored Labeling** | Clear "Sponsored" badges on promoted content |
 
 ---
 
@@ -56,18 +64,37 @@ TelmaFood is a recipe discovery platform that connects to the Edamam Recipe Sear
 
 ---
 
+## Ad System Components
+
+| Component | Purpose |
+|:---|:---|
+| `SponsoredCard` | In-feed sponsored recipe listings |
+| `ContextualBanner` | Context-aware banner ads |
+| `HeroPromo` | Hero section promotional block |
+| `PremiumPromoBlock` | Premium upgrade call-to-action |
+| `SponsoredLabel` | Accessible "Sponsored" badge |
+| `AdContainer` | Layout wrapper with impression tracking |
+| `AdCTA` | Call-to-action button for ads |
+| `AdMedia` | Responsive ad media rendering |
+| `AdSkeleton` | Loading placeholder for ad slots |
+| `useAdImpression` | Hook for viewability tracking |
+
+---
+
 ## Project Structure
 
 ```
-telmafood/
+House-Rental-Website/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx             # Home (hero + meal tabs + cuisine sliders)
 │   │   ├── recipes/page.tsx     # Search + filter + infinite grid
 │   │   ├── recipe/[id]/page.tsx # Recipe detail
 │   │   ├── saved/page.tsx       # Saved recipes
+│   │   ├── api/recipes/         # API routes for recipes
 │   │   └── layout.tsx           # Root layout
 │   ├── components/
+│   │   ├── ad/                  # Ad system components
 │   │   ├── filters/             # FilterBar, FilterAccordion, checkboxes, radios
 │   │   ├── home/                # Hero, MealTabs, CuisineSlider
 │   │   ├── layout/              # Header, Footer, MobileNav
@@ -75,11 +102,9 @@ telmafood/
 │   │   ├── search/              # SearchBar
 │   │   └── ui/                  # 14 shadcn/ui components
 │   ├── lib/
-│   │   ├── api/
-│   │   │   ├── edamam.ts        # API client
-│   │   │   ├── rate-limiter.ts  # Rate limiter (3 req/s)
-│   │   │   └── types.ts         # TypeScript interfaces
-│   │   ├── hooks/               # useRecipes, useRecipe, useDebounce
+│   │   ├── ad/                  # Ad mock data, types, utilities
+│   │   ├── api/                 # Edamam client, rate limiter, types
+│   │   ├── hooks/               # useRecipes, useRecipe, useDebounce, useAdImpression
 │   │   ├── store/               # recipeStore, filterStore
 │   │   └── utils/               # constants (filter options)
 │   └── providers/               # QueryProvider, ThemeProvider
@@ -88,21 +113,6 @@ telmafood/
 ├── tsconfig.json
 └── package.json
 ```
-
----
-
-## Filtering System
-
-| Filter | Options |
-|:-------|:--------|
-| **Meal Type** | Breakfast, Lunch, Dinner, Snack, Teatime |
-| **Diet** | Balanced, High-Fiber, High-Protein, Low-Carb, Low-Fat, Low-Sodium |
-| **Health Labels** | 34 options (Vegan, Vegetarian, Gluten-Free, Keto-Friendly, etc.) |
-| **Cuisine** | 19 cuisines (American, Asian, French, Indian, Italian, Japanese, etc.) |
-| **Dish Type** | 16 types (Soup, Salad, Main course, Desserts, etc.) |
-| **Cooking Time** | 6 ranges (under 5 min to over 1 hour) |
-| **Ingredient Count** | 4 ranges |
-| **Calorie Range** | 5 ranges (under 200 to over 800) |
 
 ---
 
@@ -115,8 +125,8 @@ telmafood/
 ### Installation
 
 ```bash
-git clone https://github.com/mohammadhossein-asadi/telmafood.git
-cd telmafood
+git clone https://github.com/mohammadhossein-asadi/House-Rental-Website.git
+cd House-Rental-Website
 npm install
 ```
 
@@ -157,15 +167,23 @@ npm run start
 
 ---
 
-## Author
+## Related Projects
 
-**Mohammadhossein Asadi** — Frontend & Full-Stack Engineer
-
-[![GitHub](https://img.shields.io/badge/GitHub-mohammadhossein--asadi-0a0a0a?style=flat-square&logo=github)](https://github.com/mohammadhossein-asadi)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-mohammadhossein--asadi-0a66c2?style=flat-square&logo=linkedin)](https://linkedin.com/in/mohammadhossein-asadi)
+- [TelmaFood](https://github.com/mohammadhossein-asadi/telmafood) — The base recipe discovery platform without ad integration
 
 ---
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**Mohammadhossein Asadi** — Frontend & Full-Stack Engineer
+
+[![GitHub](https://img.shields.io/badge/GitHub-mohammadhossein--asadi-0a0a0a?style=flat-square&logo=github)](https://github.com/mohammadhossein-asadi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mohammadhossein--asadi-0a66c2?style=flat-square&logo=linkedin)](https://linkedin.com/in/mohammadhossein-asadi)
+
+</div>
