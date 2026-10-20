@@ -167,7 +167,7 @@ export function RecipeDetail({ recipe }: RecipeDetailProps) {
           </AdContainer>
 
           <div className="rounded-2xl border border-border bg-card p-5">
-            <h3 className="font-heading text-sm tracking-[-0.015em] text-foreground mb-2">Why sponsored?</h3>
+            <h3 className="font-body text-sm font-medium tracking-[-0.015em] text-foreground mb-2">Why sponsored?</h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
               Partners support our free recipes. This recommendation is matched to <span className="text-foreground font-medium">{contextKey}</span> — never intrusive, always dismissible.
             </p>
